@@ -3,12 +3,16 @@ import { Gesture } from "./entities/Gestures";
 const { Rock, Paper, Scissors } = Gesture;
 
 export function computeWinner(gesture1: Gesture, gesture2: Gesture) {
-    if (gesture1 === Rock && gesture2 === Scissors || gesture2 === Rock && gesture1 === Scissors)
+    const gestures = [gesture1, gesture2].sort();
+
+    if (areEquals(gestures, [Rock, Scissors]))
         return Rock;
-    if (gesture1 === Scissors && gesture2 === Paper || gesture2 === Paper && gesture1 === Scissors)
+    if (areEquals(gestures, [Scissors, Paper]))
         return Scissors;
-    if (gesture1 === Paper && gesture2 === Rock || gesture2 === Paper && gesture1 === Rock)
+    if (areEquals(gestures, [Paper, Rock]))
         return Paper;
 
     return null;
 }
+
+const areEquals = (array1, array2) => array2.filter(e => !array1.includes(e)).length === 0;
