@@ -26,3 +26,15 @@ test('Paper looses versus scissors', () => {
 
     expect(winningGesture).toBe(Scissors);
 });
+
+test('Paper beats rock', () => {
+    const winningGesture = computeWinner(Paper, Rock);
+
+    expect(winningGesture).toBe(Paper);
+});
+
+test('Rock looses versus paper', () => {
+    const winningGesture = computeWinner(Rock, Paper);
+
+    expect(winningGesture).toBe(Paper);
+});
