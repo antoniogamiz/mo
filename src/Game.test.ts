@@ -8,3 +8,9 @@ test('Rock beats scissors', () => {
 
     expect(winningGesture).toBe(Rock);
 });
+
+test('Scissors looses versus scissors', () => {
+    const winningGesture = computeWinner(Scissors, Rock);
+
+    expect(winningGesture).toBe(Rock);
+});
