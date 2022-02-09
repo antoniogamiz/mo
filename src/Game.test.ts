@@ -3,55 +3,55 @@ import { computeWinner } from "./Game";
 
 const { Rock, Paper, Scissors } = Gesture;
 
-test('Rock beats scissors', () => {
+test('Rock - Scissors -> Rock', () => {
     const winningGesture = computeWinner(Rock, Scissors);
 
     expect(winningGesture).toBe(Rock);
 });
 
-test('Scissors looses versus scissors', () => {
+test('Scissors - Rock -> Rock', () => {
     const winningGesture = computeWinner(Scissors, Rock);
 
     expect(winningGesture).toBe(Rock);
 });
 
-test('Scissors beats paper', () => {
+test('Scissors - Paper -> Scissors', () => {
     const winningGesture = computeWinner(Scissors, Paper);
 
     expect(winningGesture).toBe(Scissors);
 });
 
-test('Paper looses versus scissors', () => {
+test('Paper - Scissors -> Scissors', () => {
     const winningGesture = computeWinner(Scissors, Paper);
 
     expect(winningGesture).toBe(Scissors);
 });
 
-test('Paper beats rock', () => {
+test('Paper - Rock -> Paper', () => {
     const winningGesture = computeWinner(Paper, Rock);
 
     expect(winningGesture).toBe(Paper);
 });
 
-test('Rock looses versus paper', () => {
+test('Rock - Paper -> Paper', () => {
     const winningGesture = computeWinner(Rock, Paper);
 
     expect(winningGesture).toBe(Paper);
 });
 
-test('Rock looses versus Rock', () => {
+test('Rock - Rock -> Draw', () => {
     const winningGesture = computeWinner(Rock, Rock);
 
     expect(winningGesture).toBe(null);
 });
 
-test('Scissors draws versus Scissors', () => {
+test('Scissors - Scissors -> Draw', () => {
     const winningGesture = computeWinner(Scissors, Scissors);
 
     expect(winningGesture).toBe(null);
 });
 
-test('Paper draws versus Paper', () => {
+test('Paper - Paper -> Draw', () => {
     const winningGesture = computeWinner(Paper, Paper);
 
     expect(winningGesture).toBe(null);
