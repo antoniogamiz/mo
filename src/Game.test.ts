@@ -38,3 +38,21 @@ test('Rock looses versus paper', () => {
 
     expect(winningGesture).toBe(Paper);
 });
+
+test('Rock looses versus Rock', () => {
+    const winningGesture = computeWinner(Rock, Rock);
+
+    expect(winningGesture).toBe(null);
+});
+
+test('Scissors draws versus Scissors', () => {
+    const winningGesture = computeWinner(Scissors, Scissors);
+
+    expect(winningGesture).toBe(null);
+});
+
+test('Paper draws versus Paper', () => {
+    const winningGesture = computeWinner(Paper, Paper);
+
+    expect(winningGesture).toBe(null);
+});

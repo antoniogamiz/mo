@@ -9,4 +9,6 @@ export function computeWinner(gesture1: Gesture, gesture2: Gesture) {
         return Scissors;
     if (gesture1 === Paper && gesture2 === Rock || gesture2 === Paper && gesture1 === Rock)
         return Paper;
+
+    return null;
 }
